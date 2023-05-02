@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
 
 //connecting to the database
-mongoose.connect(`mongodb://127.0.0.1:270-17/social-network-api`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/socialnetworkapp', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 //exporting the connection
